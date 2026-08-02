@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="card shadow" style="min-height:74vh;margin-bottom: 30px;">
+
+<div class="card-body text-center">
+
+<br/><br/><br/><br/><br/><br/>
+<h3>Are you sure you want to delete?</h3>
+
+
+<h5 class="text-danger">
+
+{{ object.title }}
+
+</h5>
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+
+<button class="btn btn-danger">
+
+Yes Delete
+
+</button>
+
+
+<a href="{% url 'cash_list' %}"
+class="btn btn-secondary">
+
+Cancel
+
+</a>
+
+
+</form>
+
+
+</div>
+
+</div>
+
+
+{% endblock %}

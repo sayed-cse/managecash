@@ -1,0 +1,235 @@
+:root{
+    --bg1:#081c15;
+    --bg2:#1b4332;
+    --bg3:#2d6a4f;
+    --card:#173d2c;
+    --card2:#214d37;
+    --border:#3a5a40;
+    --text:#f1fff5;
+    --muted:#c9e4cf;
+    --accent:#74c69d;
+    --success:#40916c;
+    --danger:#c1121f;
+    --orange:#f60;
+}
+
+
+/* Main Pages */
+
+body{
+    background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+    background-attachment:fixed;
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;    
+}
+.card {
+  background-color: #081c15;
+  color: #fff;
+  border-color: #2d6a4f;
+}
+
+.navBG{background:#081c15 !important;}
+main{flex:1;padding:30px;}
+footer{margin-bottom:0;background-color:#081c15;font-size: x-small;text-align: center;color:#fff}
+.cash-manager-page,
+.form-page{
+    min-height: 90vh;margin-bottom:30px;
+    background:rgba(23,61,44,.85);
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+
+/* Titles */
+
+.page-title{
+    color:var(--text);
+    font-weight:700;
+}
+
+
+/* Main Buttons */
+
+.mbox,
+.army-btn,
+.save-btn{
+    background:var(--bg3);
+    color:#fff;
+    border:1px solid var(--accent);
+    border-radius:25px;
+    padding:10px 30px;
+}
+
+
+.mbox:hover,
+.army-btn:hover,
+.save-btn:hover{
+    background:var(--success);
+    color:#fff;
+}
+
+
+/* Summary Cards */
+
+.stat-card{
+    color:var(--text);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+
+.income-card{
+    background:linear-gradient(135deg,#2d6a4f,#40916c);
+}
+
+
+.expense-card{
+    background:linear-gradient(135deg,#7f1d1d,#c1121f);
+}
+
+
+.balance-card{
+    background:linear-gradient(135deg,#264653,#2a9d8f);
+}
+
+
+/* Table */
+
+.cash-table{
+    color:var(--text);
+    border-radius:12px;
+    overflow:hidden;
+}
+
+
+.cash-table thead{
+    background:var(--card2);
+    color:#fff;
+}
+
+
+.cash-table tbody tr{
+    background:var(--card);
+}
+
+
+.cash-table tbody tr:hover > td{
+    background-color: #86ac99 !important;cursor:pointer;
+}
+
+
+.empty-row{
+    color:var(--muted);
+    font-weight:600;
+}
+
+
+/* Action Buttons */
+
+.edit-btn{
+    background:var(--orange);
+    color:#fff;
+    border:none;
+    border-radius:12px;
+}
+
+
+.edit-btn:hover{
+    background:#ff8533;
+    color:#fff;
+}
+
+
+.delete-btn{
+    background:var(--danger);
+    color:#fff;
+    border:none;
+    border-radius:12px;
+}
+
+
+.delete-btn:hover{
+    background:#e63946;
+    color:#fff;
+}
+
+
+/* Form */
+
+.form-card{
+    margin:0 auto;
+    min-height: 90vh;margin-bottom:30px;
+    padding:30px;
+    width:100%;
+    max-width:600px;
+    background:var(--card);
+    color:var(--text);
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+
+.form-header{
+    background:var(--card2);
+    color:var(--text);
+    padding:20px;
+    text-align:center;
+}
+
+
+.form-header h3{
+    margin:0;
+    font-weight:700;
+}
+
+
+.form-body{
+    padding:30px;
+    color:var(--text);
+}
+
+
+/* Form Inputs */
+
+.form-body input,
+.form-body select,
+.form-body textarea{
+    width:100%;
+    padding:10px;
+    background:var(--card2);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:10px;
+}
+
+
+.form-body input:focus,
+.form-body select:focus,
+.form-body textarea:focus{
+    outline:none;
+    border-color:var(--accent);
+    box-shadow:0 0 0 .2rem rgba(116,198,157,.25);
+}
+
+
+/* Cancel Button */
+
+.cancel-btn{
+    background:#495057;
+    color:#fff;
+    border:none;
+    border-radius:25px;
+    padding:10px 30px;
+}
+
+
+.cancel-btn:hover{
+    background:#343a40;
+    color:#fff;
+}

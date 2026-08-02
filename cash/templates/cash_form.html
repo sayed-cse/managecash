@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+<div class="form-card">
+
+<div class="form-header">
+
+<h3>
+{% if object %}
+    Update Cash
+{% else %}
+    Insert Cash
+{% endif %}
+</h3>
+
+</div>
+
+
+<div class="form-body">
+
+<form method="POST">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+
+<button class="btn save-btn">
+
+{% if object %}
+    Update
+{% else %}
+    Save
+{% endif %}
+
+</button>
+
+
+<a href="{% url 'cash_list' %}" class="btn cancel-btn">
+Cancel
+</a>
+
+
+</form>
+
+
+
+
+</div>
+
+</div>
+
+{% endblock %}

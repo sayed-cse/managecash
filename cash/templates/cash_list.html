@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="cash-manager-page">
+
+<div class="d-flex justify-content-between mb-3">
+
+    <h2 class="page-title">Cash Manager</h2>
+
+    <a href="{% url 'cash_add' %}" class="btn army-btn">
+        + Manage Cash
+    </a>
+
+</div>
+
+
+<div class="row mb-4">
+
+    <div class="col-md-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h4>Income</h4>
+                <h3>{{ total_income }}</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h4>Expense</h4>
+                <h3>{{ total_expense }}</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="card stat-card">
+            <div class="card-body">
+                <h4>Balance</h4>
+                <h3>{{ balance }}</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<table class="table cash-table">
+
+<thead>
+<tr>
+    <th>Type</th>
+    <th>Title</th>
+    <th>Amount</th>
+    <th>Date</th>
+    <th>Action</th>
+</tr>
+</thead>
+
+
+<tbody>
+
+{% for cash in cash_list %}
+
+<tr>
+
+<td>
+    {% if cash.transaction_type == "Income" %}
+        <span class="badge bg-success">
+            Income
+        </span>
+    {% else %}
+        <span class="badge bg-danger">
+            Expense
+        </span>
+    {% endif %}
+</td>
+<td>{{ cash.title }}</td>
+<td>
+    {% if cash.transaction_type == "Income" %}
+        <span class="text-success fw-bold">
+            +{{ cash.amount }}
+        </span>
+    {% else %}
+        <span class="text-danger fw-bold">
+            -{{ cash.amount }}
+        </span>
+    {% endif %}
+</td>
+<td>{{ cash.date }}</td>
+
+<td>
+
+<a href="{% url 'cash_edit' cash.id %}"
+class="btn edit-btn btn-sm">
+Edit
+</a>
+
+
+<a href="{% url 'cash_delete' cash.id %}"
+onclick="return confirmDelete();"
+class="btn delete-btn btn-sm">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+<td colspan="6" class="text-center empty-row">
+No Cash Data Found
+</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}
